@@ -4,22 +4,24 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(
         name = "application",
         indexes = {}
 )
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Builder
 public class Application {
     @Id
-    @Generated
+    @GeneratedValue
     @Builder.Default
     private Long id = null;
 

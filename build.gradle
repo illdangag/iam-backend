@@ -42,12 +42,17 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+    testImplementation 'com.h2database:h2:2.1.214' // 테스트 환경에서 사용 할 데이터베이스
+    testImplementation 'org.springframework.boot:spring-boot-starter-validation' // annotation 기반의 데이터 검증 자동화
 }
 
 checkstyle {
